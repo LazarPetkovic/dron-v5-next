@@ -8,15 +8,15 @@ export const navItems = [
 export const services = [
   {
     title: 'Aerial Films',
-    text: 'Placeholder showcase for cinematic drone coverage, property motion, and elevated perspective.',
+    text: 'Cinematic drone coverage for property reveals, destination stories, and brand films built around motion.',
   },
   {
     title: 'Luxury Real Estate',
-    text: 'Placeholder media block for premium listings, villas, hotels, and architectural storytelling.',
+    text: 'Premium visuals for villas, hotels, resorts, and architecture where atmosphere sells the experience.',
   },
   {
     title: 'Event Visuals',
-    text: 'Placeholder space for aftermovies, launch edits, destination events, and branded highlights.',
+    text: 'Aftermovies, launch edits, and social-ready highlight cuts for events that need a polished visual record.',
   },
 ]
 

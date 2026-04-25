@@ -14,13 +14,19 @@ export default function HomePage() {
 
         <div className="container hero-content">
           <div className="hero-copy">
-            <div className="eyebrow">Visual-first portfolio</div>
+            <div className="eyebrow">Aerial visual production</div>
             <h1 className="hero-title">
-              Placeholder frames for a <span className="accent">cinematic</span> studio site.
+              Cinematic drone visuals for places worth <span className="accent">remembering</span>.
             </h1>
             <p className="hero-description">
-              Built to follow the V5 direction: layered composition, premium dark surfaces, restrained motion, and a visual flow that feels like a studio, not a template.
+              Premium aerial films for luxury real estate, destination events, and brand stories that need atmosphere, scale, and a polished point of view.
             </p>
+            <div className="hero-proof" aria-label="Core services">
+              <span>Real estate</span>
+              <span>Events</span>
+              <span>Tourism</span>
+              <span>Brand films</span>
+            </div>
             <div className="hero-actions">
               <Link href="/works" className="btn-primary">
                 View works
@@ -37,7 +43,7 @@ export default function HomePage() {
         <div className="services-grid">
           {services.map((service, index) => (
             <article key={service.title} className={`glass card-hover service-card ${index === 1 ? 'service-card--raised' : ''}`}>
-              <div className="service-card__label">Service Preview</div>
+              <div className="service-card__label">Service</div>
               <h3 className="service-card__title">{service.title}</h3>
               <p className="service-card__text">{service.text}</p>
             </article>

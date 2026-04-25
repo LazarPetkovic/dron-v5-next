@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { navItems } from '@/data/site-data'
 
 export function Header() {
@@ -7,7 +8,15 @@ export function Header() {
       <div className="site-header__bar">
         <div className="container site-header__inner">
           <Link href="/" className="site-header__brand">
-            Dron V5
+            <Image
+              src="/images/DronBrand-nav.png"
+              alt="Dron V5"
+              width={186}
+              height={66}
+              priority
+              className="site-header__brand-mark"
+            />
+            <span className="site-header__brand-text">Dron V5</span>
           </Link>
           <nav className="site-header__nav">
             {navItems.map((item) => (

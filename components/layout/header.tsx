@@ -3,27 +3,23 @@ import { navItems } from '@/data/site-data'
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="container pt-5">
-        <div className="glass flex items-center justify-between rounded-full px-4 py-3 md:px-6">
-          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.28em] text-white/90">
+    <header className="site-header">
+      <div className="site-header__bar">
+        <div className="container site-header__inner">
+          <Link href="/" className="site-header__brand">
             Dron V5
           </Link>
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav className="site-header__nav">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-[0.78rem] uppercase tracking-[0.22em] text-white/68 transition hover:text-white"
-              >
+              <Link key={item.href} href={item.href} className="site-header__link">
                 {item.label}
               </Link>
             ))}
           </nav>
-          <Link href="/contact" className="btn-secondary hidden md:inline-flex">
+          <Link href="/contact" className="btn-secondary site-header__cta">
             Start a Project
           </Link>
-          <Link href="/contact" className="text-[0.78rem] uppercase tracking-[0.22em] text-white/80 md:hidden">
+          <Link href="/contact" className="site-header__menu">
             Menu
           </Link>
         </div>

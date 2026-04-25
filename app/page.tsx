@@ -6,22 +6,22 @@ import { projects, services } from '@/data/site-data'
 export default function HomePage() {
   return (
     <>
-      <section className="relative flex min-h-[96vh] items-end overflow-hidden pt-32">
-        <div className="absolute inset-0">
-          <div className="media-placeholder h-full rounded-none border-x-0 border-t-0" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,8,12,0.46),rgba(4,8,12,0.28)_30%,rgba(4,8,12,0.82)_100%)]" />
+      <section className="hero-section">
+        <div className="hero-backdrop">
+          <div className="hero-media hero-media--full" />
+          <div className="hero-overlay" />
         </div>
 
-        <div className="container relative z-10 pb-20 md:pb-28">
-          <div className="max-w-[760px]">
+        <div className="container hero-content">
+          <div className="hero-copy">
             <div className="eyebrow">Visual-first portfolio</div>
-            <h1 className="text-hero mt-6 max-w-[760px] font-semibold text-white">
+            <h1 className="hero-title">
               Placeholder frames for a <span className="accent">cinematic</span> studio site.
             </h1>
-            <p className="text-body mt-6 max-w-[640px]">
-              Built to follow the V5 direction: layered composition, premium dark surfaces, restrained motion, and a visual flow that feels like a studio, not a template. 
+            <p className="hero-description">
+              Built to follow the V5 direction: layered composition, premium dark surfaces, restrained motion, and a visual flow that feels like a studio, not a template.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="hero-actions">
               <Link href="/works" className="btn-primary">
                 View works
               </Link>
@@ -33,29 +33,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-wide relative z-20 -mt-14 md:-mt-20">
-        <div className="grid gap-4 md:grid-cols-3">
+      <section className="container-wide services-preview">
+        <div className="services-grid">
           {services.map((service, index) => (
-            <article
-              key={service.title}
-              className={`glass card-hover rounded-[26px] p-5 md:p-6 ${index === 1 ? 'md:-translate-y-6' : ''}`}
-            >
-              <div className="text-[0.72rem] uppercase tracking-[0.22em] text-white/45">Service Preview</div>
-              <h3 className="mt-4 text-xl font-semibold text-white">{service.title}</h3>
-              <p className="text-body mt-3">{service.text}</p>
+            <article key={service.title} className={`glass card-hover service-card ${index === 1 ? 'service-card--raised' : ''}`}>
+              <div className="service-card__label">Service Preview</div>
+              <h3 className="service-card__title">{service.title}</h3>
+              <p className="service-card__text">{service.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section-gap">
-        <div className="container-wide grid items-center gap-12 md:grid-cols-[1fr_0.9fr]">
-          <div>
+      <section className="statement-section">
+        <div className="container-wide statement-grid">
+          <div className="statement-copy">
             <div className="eyebrow">Statement block</div>
-            <h2 className="text-statement mt-6 max-w-3xl font-semibold">
+            <h2 className="statement-title">
               The flow is built around <span className="accent">atmosphere</span>, not stacked business sections.
             </h2>
-            <p className="text-body mt-6 max-w-xl">
+            <p className="statement-text">
               This homepage uses overlap, uneven pacing, and oversized visual placeholders so real media can drive the experience once it is dropped in.
             </p>
           </div>
@@ -67,25 +64,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-gap pt-0">
+      <section className="featured-section">
         <div className="container-wide">
-          <div className="mb-8 flex items-end justify-between gap-6">
-            <div>
+          <div className="featured-header">
+            <div className="featured-header__copy">
               <div className="eyebrow">Featured project</div>
-              <h2 className="text-statement mt-6 max-w-3xl font-semibold">Main proof block with hero-level scale.</h2>
+              <h2 className="featured-title">Main proof block with hero-level scale.</h2>
             </div>
-            <Link href="/works" className="btn-secondary hidden md:inline-flex">
+            <Link href="/works" className="btn-secondary featured-link">
               Open portfolio
             </Link>
           </div>
 
-          <div className="portfolio-cluster items-stretch">
+          <div className="portfolio-cluster featured-cluster">
             <MediaPlaceholder label={projects[0].tag} title={projects[0].title} height="640px" />
-            <div className="glass flex flex-col justify-end rounded-[28px] p-7 md:p-9">
-              <div className="text-[0.72rem] uppercase tracking-[0.24em] text-white/45">Featured project text plate</div>
-              <h3 className="mt-5 text-3xl font-semibold text-white">{projects[0].title}</h3>
-              <p className="text-body mt-4">{projects[0].text}</p>
-              <div className="mt-8 flex flex-wrap gap-4">
+            <div className="glass featured-panel">
+              <div className="featured-panel__label">Featured project text plate</div>
+              <h3 className="featured-panel__title">{projects[0].title}</h3>
+              <p className="featured-panel__text">{projects[0].text}</p>
+              <div className="featured-panel__actions">
                 <Link href="/works" className="btn-primary">
                   View case study
                 </Link>
@@ -98,11 +95,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-gap pt-0">
+      <section className="portfolio-section">
         <div className="container-wide">
-          <div className="mb-8">
+          <div className="portfolio-section__header">
             <div className="eyebrow">Portfolio cluster</div>
-            <h2 className="text-statement mt-6 max-w-3xl font-semibold">Controlled asymmetry, placeholder by placeholder.</h2>
+            <h2 className="portfolio-section__title">Controlled asymmetry, placeholder by placeholder.</h2>
           </div>
 
           <div className="portfolio-cluster">
@@ -110,7 +107,7 @@ export default function HomePage() {
             <div className="portfolio-side">
               <MediaPlaceholder label={projects[2].tag} title={projects[2].title} height="250px" compact />
               <MediaPlaceholder label={projects[3].tag} title={projects[3].title} height="250px" compact />
-              <div className="md:col-span-2">
+              <div className="portfolio-side__wide">
                 <MediaPlaceholder label={projects[4].tag} title={projects[4].title} height="300px" compact />
               </div>
             </div>
@@ -118,12 +115,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-gap pt-0">
-        <div className="container-wide grid gap-10 md:grid-cols-[0.95fr_1.05fr] md:items-center">
-          <div className="glass rounded-[28px] p-7 md:p-10">
+      <section className="mini-studio-section">
+        <div className="container-wide mini-studio-grid">
+          <div className="glass mini-studio-panel">
             <div className="eyebrow">Mini studio block</div>
-            <h2 className="text-statement mt-6 font-semibold">About the system, not the final brand.</h2>
-            <p className="text-body mt-5 max-w-xl">
+            <h2 className="mini-studio-title">About the system, not the final brand.</h2>
+            <p className="mini-studio-text">
               This version keeps the visual architecture, page rhythm, and placeholder media treatments ready for a full custom studio build. Real copy, client proof, and final project visuals can replace the placeholders without changing the core experience.
             </p>
           </div>

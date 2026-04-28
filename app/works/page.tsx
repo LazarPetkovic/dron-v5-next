@@ -16,7 +16,23 @@ export default function WorksPage() {
       </section>
 
       <section className="container-wide pb-10">
-        <MediaPlaceholder label="Featured visual" title="Portfolio hero placeholder" height="620px" />
+        <div className="relative min-h-[440px] overflow-hidden rounded-[24px] border border-white/10 bg-[#070b11] shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:min-h-[620px]">
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+          >
+            <source src="/videos/NightCity.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,11,17,0.08),rgba(7,11,17,0.68))]" />
+          <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/25 px-3 py-2 text-[0.72rem] uppercase tracking-[0.22em] text-white/70 backdrop-blur-md">
+            Featured visual
+          </div>
+        </div>
       </section>
 
       <section className="section-gap pt-8">

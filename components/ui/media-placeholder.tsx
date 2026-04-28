@@ -3,11 +3,18 @@ type MediaPlaceholderProps = {
   title: string
   height?: string
   compact?: boolean
+  imageSrc?: string
 }
 
-export function MediaPlaceholder({ label, title, height, compact = false }: MediaPlaceholderProps) {
+export function MediaPlaceholder({ label, title, height, compact = false, imageSrc }: MediaPlaceholderProps) {
   return (
-    <div className="media-placeholder card-hover" style={{ minHeight: height ?? '340px' }}>
+    <div
+      className="media-placeholder card-hover"
+      style={{
+        minHeight: height ?? '340px',
+        ...(imageSrc ? { backgroundImage: `url(${imageSrc})` } : {}),
+      }}
+    >
       <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[0.72rem] uppercase tracking-[0.22em] text-white/60 backdrop-blur-md">
         {label}
       </div>
@@ -19,7 +26,7 @@ export function MediaPlaceholder({ label, title, height, compact = false }: Medi
             {compact ? 'Placeholder still' : 'Placeholder image or loop video'}
           </div>
         </div>
-        <div className="play-chip text-white/85">▶</div>
+        <div className="play-chip" aria-hidden="true" />
       </div>
     </div>
   )

@@ -8,23 +8,23 @@ export const navItems = [
 export const services = [
   {
     title: 'Aerial Films',
-    text: 'Cinematic drone coverage for property reveals, destination stories, and brand films built around motion.',
+    text: 'Drone-led hero films, short reels, and polished edits for launches, locations, and brand stories that need cinematic scale.',
   },
   {
     title: 'Luxury Real Estate',
-    text: 'Premium visuals for villas, hotels, resorts, and architecture where atmosphere sells the experience.',
+    text: 'Aerial walkthroughs, twilight exteriors, and listing-ready video packages for villas, hotels, resorts, and premium architecture.',
   },
   {
     title: 'Event Visuals',
-    text: 'Aftermovies, launch edits, and social-ready highlight cuts for events that need a polished visual record.',
+    text: 'Aftermovies, launch recaps, and social-ready highlight cuts delivered with a clean visual record of the atmosphere and crowd.',
   },
 ]
 
 export const projects = [
   {
     title: 'Sunset Property Film',
-    tag: 'Featured / Placeholder Video',
-    text: 'Hero-level placeholder for the main case study. This block is designed to be replaced by real film stills or a loop video.',
+    tag: 'Featured reel',
+    text: 'A cinematic property film designed to turn location, light, and movement into a polished sales asset for web, social, and client presentations.',
     size: 'large',
   },
   {

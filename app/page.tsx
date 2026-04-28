@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CtaBlock } from '@/components/ui/cta-block'
 import { MediaPlaceholder } from '@/components/ui/media-placeholder'
+import { MoodToggle } from '@/components/ui/mood-toggle'
 import { projects, services } from '@/data/site-data'
 
 export default function HomePage() {
@@ -21,12 +22,13 @@ export default function HomePage() {
             <p className="hero-description">
               Premium aerial films for luxury real estate, destination events, and brand stories that need atmosphere, scale, and a polished point of view.
             </p>
-            <div className="hero-proof" aria-label="Core services">
+            <MoodToggle />
+            {/* <div className="hero-proof" aria-label="Core services">
               <span>Real estate</span>
               <span>Events</span>
               <span>Tourism</span>
               <span>Brand films</span>
-            </div>
+            </div> */}
             <div className="hero-actions">
               <Link href="/works" className="btn-primary">
                 View works
@@ -42,10 +44,14 @@ export default function HomePage() {
       <section className="container-wide services-preview">
         <div className="services-grid">
           {services.map((service, index) => (
-            <article key={service.title} className={`glass card-hover service-card ${index === 1 ? 'service-card--raised' : ''}`}>
-              <div className="service-card__label">Service</div>
+            <article key={service.title} className={`glass card-hover service-card ${index === 1 ? 'service-card--featured' : ''}`}>
+              <div className="service-card__label">{index === 1 ? 'Featured service' : 'Service'}</div>
               <h3 className="service-card__title">{service.title}</h3>
               <p className="service-card__text">{service.text}</p>
+              <Link href="/works" className="service-card__link" aria-label={`View works for ${service.title}`}>
+                <span>View works</span>
+                <span className="service-card__arrow" aria-hidden="true" />
+              </Link>
             </article>
           ))}
         </div>
@@ -54,18 +60,18 @@ export default function HomePage() {
       <section className="statement-section">
         <div className="container-wide statement-grid">
           <div className="statement-copy">
-            <div className="eyebrow">Statement block</div>
+            <div className="eyebrow">Creative approach</div>
             <h2 className="statement-title">
-              The flow is built around <span className="accent">atmosphere</span>, not stacked business sections.
+              Built around <span className="accent">movement</span>, light, and atmosphere.
             </h2>
             <p className="statement-text">
-              This homepage uses overlap, uneven pacing, and oversized visual placeholders so real media can drive the experience once it is dropped in.
+              Every project starts with the mood of the place: the strongest angles, the right timing, and a clean edit rhythm that makes the final film feel intentional.
             </p>
           </div>
           <div className="grid-drift">
-            <MediaPlaceholder label="Still" title="Floating visual one" height="250px" compact />
-            <MediaPlaceholder label="Clip" title="Floating visual two" height="300px" compact />
-            <MediaPlaceholder label="Frame" title="Floating visual three" height="230px" compact />
+            <MediaPlaceholder label="Plan" title="Angles, light, timing" height="250px" compact />
+            <MediaPlaceholder label="Capture" title="Motion with clean coverage" height="300px" compact />
+            <MediaPlaceholder label="Edit" title="Hero films and social cuts" height="230px" compact />
           </div>
         </div>
       </section>
@@ -75,7 +81,7 @@ export default function HomePage() {
           <div className="featured-header">
             <div className="featured-header__copy">
               <div className="eyebrow">Featured project</div>
-              <h2 className="featured-title">Main proof block with hero-level scale.</h2>
+              <h2 className="featured-title">Featured work with cinematic scale and commercial purpose.</h2>
             </div>
             <Link href="/works" className="btn-secondary featured-link">
               Open portfolio
@@ -84,16 +90,21 @@ export default function HomePage() {
 
           <div className="portfolio-cluster featured-cluster">
             <MediaPlaceholder label={projects[0].tag} title={projects[0].title} height="640px" />
-            <div className="glass featured-panel">
-              <div className="featured-panel__label">Featured project text plate</div>
+            <div className="glass featured-panel featured-panel--sunset">
+              <div className="featured-panel__label">Case 01 / Property film</div>
               <h3 className="featured-panel__title">{projects[0].title}</h3>
+              <div className="featured-panel__meta" aria-label="Project details">
+                <span>Drone + edit</span>
+                <span>Hero film</span>
+                <span>Social cuts</span>
+              </div>
               <p className="featured-panel__text">{projects[0].text}</p>
               <div className="featured-panel__actions">
                 <Link href="/works" className="btn-primary">
                   View case study
                 </Link>
                 <Link href="/contact" className="btn-secondary">
-                  Ask for similar work
+                  Start similar project
                 </Link>
               </div>
             </div>

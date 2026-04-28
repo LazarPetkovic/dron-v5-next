@@ -1,19 +1,16 @@
 import { CtaBlock } from '@/components/ui/cta-block'
 import { MediaPlaceholder } from '@/components/ui/media-placeholder'
+import { PageHero } from '@/components/sections/page-hero'
 import { projects } from '@/data/site-data'
 
 export default function WorksPage() {
   return (
     <>
-      <section className="container section-gap pt-32 md:pt-40">
-        <div className="eyebrow">Works / Portfolio</div>
-        <h1 className="text-statement mt-6 max-w-4xl font-semibold">
-          A clustered portfolio page with room for stills, reels, and case-study proof.
-        </h1>
-        <p className="text-body mt-6 max-w-2xl">
-          This page keeps the V5 idea intact: one dominant visual, supporting media tiles, and no flat catalog feeling.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Works / Portfolio"
+        title="Drone visuals for properties, weddings, events and locations."
+        text="A selection structure for aerial films, stills and project stories from Belgrade."
+      />
 
       <section className="container-wide pb-10">
         <div className="relative min-h-[440px] overflow-hidden rounded-[24px] border border-white/10 bg-[#070b11] shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:min-h-[620px]">

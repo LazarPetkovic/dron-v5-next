@@ -1,15 +1,15 @@
 import { CtaBlock } from '@/components/ui/cta-block'
 import { MediaPlaceholder } from '@/components/ui/media-placeholder'
+import { PageHero } from '@/components/sections/page-hero'
 
 export default function StudioPage() {
   return (
     <>
-      <section className="container section-gap pt-32 md:pt-40">
-        <div className="eyebrow">About / Studio</div>
-        <h1 className="text-statement mt-6 max-w-4xl font-semibold">
-          A minimal studio page built to support trust without slowing the flow.
-        </h1>
-      </section>
+      <PageHero
+        eyebrow="About / Studio"
+        title="Focused aerial production for clean, cinematic visual results."
+        text="Dron V5 plans, captures and edits drone visuals for properties, events and locations in Belgrade."
+      />
 
       <section className="container-wide grid gap-8 md:grid-cols-[1fr_1.05fr]">
         <div className="glass rounded-[30px] p-7 md:p-10">

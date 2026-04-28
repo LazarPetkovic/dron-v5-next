@@ -1,14 +1,14 @@
+import { PageHero } from '@/components/sections/page-hero'
 import { MediaPlaceholder } from '@/components/ui/media-placeholder'
 
 export default function ContactPage() {
   return (
     <>
-      <section className="container section-gap pt-32 md:pt-40">
-        <div className="eyebrow">Contact</div>
-        <h1 className="text-statement mt-6 max-w-4xl font-semibold">
-          Contact layout with premium spacing and a direct path to action.
-        </h1>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Tell us what you need filmed from above."
+        text="Share the location, date and project type. Dron V5 will suggest the best aerial visual approach."
+      />
 
       <section className="container-wide pb-16">
         <div className="grid gap-6 md:grid-cols-[0.9fr_1.1fr]">

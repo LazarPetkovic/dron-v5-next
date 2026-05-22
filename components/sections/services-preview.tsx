@@ -4,6 +4,10 @@ import { services } from '@/data/site-data'
 export function ServicesPreview() {
   return (
     <section className="container-wide services-preview">
+      <div className="services-preview__header">
+        <div className="eyebrow">Services</div>
+        <h2 className="services-preview__title">Aerial visuals for properties, events and locations.</h2>
+      </div>
       <div className="services-grid">
         {services.map((service) => (
           <article key={service.title} className={`glass card-hover service-card ${service.featured ? 'service-card--featured' : ''}`}>

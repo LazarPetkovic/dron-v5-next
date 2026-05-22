@@ -4,9 +4,12 @@ type MediaPlaceholderProps = {
   height?: string
   compact?: boolean
   imageSrc?: string
+  caption?: string
 }
 
-export function MediaPlaceholder({ label, title, height, compact = false, imageSrc }: MediaPlaceholderProps) {
+export function MediaPlaceholder({ label, title, height, compact = false, imageSrc, caption }: MediaPlaceholderProps) {
+  const fallbackCaption = compact ? 'Future still frame' : 'Future project media'
+
   return (
     <div
       className="media-placeholder card-hover"
@@ -23,7 +26,7 @@ export function MediaPlaceholder({ label, title, height, compact = false, imageS
         <div>
           <div className="text-sm font-medium text-white/95">{title}</div>
           <div className="mt-1 text-xs uppercase tracking-[0.2em] text-white/45">
-            {compact ? 'Placeholder still' : 'Placeholder image or loop video'}
+            {caption ?? fallbackCaption}
           </div>
         </div>
         <div className="play-chip" aria-hidden="true" />

@@ -26,10 +26,10 @@ export function Header() {
             ))}
           </nav>
           <Link href="/contact" className="btn-secondary site-header__cta">
-            Start a Project
+            Send Inquiry
           </Link>
           <Link href="/contact" className="site-header__menu">
-            Menu
+            Contact
           </Link>
         </div>
       </div>

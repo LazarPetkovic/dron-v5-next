@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
+import { PageHero } from '@/components/sections/page-hero'
 import { CtaBlock } from '@/components/ui/cta-block'
 import { MediaPlaceholder } from '@/components/ui/media-placeholder'
-import { PageHero } from '@/components/sections/page-hero'
+import { processSteps, trustPoints } from '@/data/site-data'
+
+export const metadata: Metadata = {
+  title: 'Studio | About Dron V5',
+  description: 'Learn about Dron V5, a Belgrade-based drone visual production studio for property films, aerial photography, weddings, events and location stories.',
+}
 
 export default function StudioPage() {
   return (
@@ -14,49 +21,40 @@ export default function StudioPage() {
       <section className="container-wide grid gap-8 md:grid-cols-[1fr_1.05fr]">
         <div className="glass rounded-[30px] p-7 md:p-10">
           <div className="text-[0.72rem] uppercase tracking-[0.24em] text-white/45">Studio statement</div>
-          <h2 className="text-statement mt-5 font-semibold">Short, confident, and visual-first.</h2>
+          <h2 className="text-statement mt-5 font-semibold">Built around planning, movement and light.</h2>
           <p className="text-body mt-5 max-w-xl">
-            This area is intentionally concise. In the final version it can hold a compact studio story, shooting philosophy, and production approach without turning into a generic corporate “about us” page.
+            Every flight starts with a clear purpose: what the location needs to show, when the light works best, and how the final video or photo set will be used.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="glass rounded-[22px] p-4">
-              <div className="text-2xl font-semibold">01</div>
-              <div className="mt-2 text-sm text-white/70">Capture</div>
-            </div>
-            <div className="glass rounded-[22px] p-4">
-              <div className="text-2xl font-semibold">02</div>
-              <div className="mt-2 text-sm text-white/70">Edit</div>
-            </div>
-            <div className="glass rounded-[22px] p-4">
-              <div className="text-2xl font-semibold">03</div>
-              <div className="mt-2 text-sm text-white/70">Deliver</div>
-            </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {processSteps.map((step, index) => (
+              <div key={step.title} className="glass rounded-[22px] p-4">
+                <div className="text-2xl font-semibold">{String(index + 1).padStart(2, '0')}</div>
+                <div className="mt-2 text-sm font-semibold text-white/82">{step.title}</div>
+                <p className="mt-2 text-sm leading-6 text-white/65">{step.text}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <MediaPlaceholder label="Behind the scenes" title="Studio visual placeholder" height="500px" />
+        <MediaPlaceholder label="Behind the scenes" title="Planning, capture and delivery workflow" height="500px" />
       </section>
 
       <section className="container-wide section-gap">
+        <div className="portfolio-section__header">
+          <div className="eyebrow">Trust points</div>
+          <h2 className="portfolio-section__title">A focused workflow without fake numbers.</h2>
+        </div>
         <div className="grid gap-5 md:grid-cols-3">
-          <div className="glass rounded-[26px] p-6">
-            <div className="text-[0.72rem] uppercase tracking-[0.22em] text-white/45">Trust</div>
-            <div className="mt-4 text-4xl font-semibold text-white">12+</div>
-            <div className="mt-2 text-sm text-white/65">Placeholder premium projects</div>
-          </div>
-          <div className="glass rounded-[26px] p-6">
-            <div className="text-[0.72rem] uppercase tracking-[0.22em] text-white/45">Reach</div>
-            <div className="mt-4 text-4xl font-semibold text-white">3</div>
-            <div className="mt-2 text-sm text-white/65">Placeholder service directions</div>
-          </div>
-          <div className="glass rounded-[26px] p-6">
-            <div className="text-[0.72rem] uppercase tracking-[0.22em] text-white/45">Style</div>
-            <div className="mt-4 text-4xl font-semibold text-white">V5</div>
-            <div className="mt-2 text-sm text-white/65">Dark, cinematic, controlled</div>
-          </div>
+          {trustPoints.map((point) => (
+            <div key={point.title} className="glass rounded-[26px] p-6">
+              <div className="text-[0.72rem] uppercase tracking-[0.22em] text-white/45">Dron V5</div>
+              <h3 className="mt-4 text-2xl font-semibold text-white">{point.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/65">{point.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <CtaBlock />
+      <CtaBlock title="Let us plan the right aerial approach for your project." secondaryLabel={undefined} />
     </>
   )
 }

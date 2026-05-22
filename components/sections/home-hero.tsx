@@ -1,7 +1,4 @@
 import Link from 'next/link'
-import { MoodToggle } from '@/components/ui/mood-toggle'
-
-const proofItems = ['Property', 'Weddings', 'Events', 'Construction', 'Land']
 
 export function HomeHero() {
   return (
@@ -20,12 +17,6 @@ export function HomeHero() {
           <p className="hero-description">
             Drone films and aerial photography for houses, buildings, land, weddings, events, construction progress and brand stories.
           </p>
-          <MoodToggle />
-          <div className="hero-proof" aria-label="Core services">
-            {proofItems.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
           <div className="hero-actions">
             <Link href="/contact" className="btn-primary">
               Send inquiry

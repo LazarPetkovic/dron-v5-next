@@ -1,7 +1,13 @@
-import { CtaBlock } from '@/components/ui/cta-block'
-import { MediaPlaceholder } from '@/components/ui/media-placeholder'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/sections/page-hero'
-import { projects } from '@/data/site-data'
+import { ProjectGrid } from '@/components/sections/project-grid'
+import { CtaBlock } from '@/components/ui/cta-block'
+
+export const metadata: Metadata = {
+  title: 'Works | Dron V5 Drone Portfolio',
+  description: 'Explore Dron V5 drone video and aerial photography work for Belgrade properties, land, weddings, events, construction and locations.',
+}
 
 export default function WorksPage() {
   return (
@@ -14,15 +20,7 @@ export default function WorksPage() {
 
       <section className="container-wide pb-10">
         <div className="relative min-h-[440px] overflow-hidden rounded-[24px] border border-white/10 bg-[#070b11] shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:min-h-[620px]">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-          >
+          <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" aria-hidden="true">
             <source src="/videos/NightCity.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,11,17,0.08),rgba(7,11,17,0.68))]" />
@@ -32,34 +30,28 @@ export default function WorksPage() {
         </div>
       </section>
 
-      <section className="section-gap pt-8">
-        <div className="container-wide grid gap-5 md:grid-cols-3">
-          {projects.map((project, index) => (
-            <div key={project.title} className={index === 0 ? 'md:col-span-2' : ''}>
-              <MediaPlaceholder
-                label={project.tag}
-                title={project.title}
-                height={index === 0 ? '430px' : index === 3 ? '360px' : '300px'}
-                compact={index !== 0}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProjectGrid />
 
       <section className="container-wide section-gap pt-0">
         <div className="glass grid gap-6 rounded-[30px] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10">
           <div>
-            <div className="eyebrow">Case-study block</div>
-            <h2 className="text-statement mt-6 font-semibold">A place for the story behind the strongest project.</h2>
+            <div className="eyebrow">Case study preview</div>
+            <h2 className="text-statement mt-6 font-semibold">From location brief to polished aerial story.</h2>
+          </div>  
+          <div>
+            <p className="text-body max-w-2xl">
+              A complete project can explain the location, capture plan, strongest angles, edit direction and final delivery without turning the page into a heavy text document.
+            </p>
+            <div className="mt-8">
+              <Link href="/contact" className="btn-primary">
+                Start similar project
+              </Link>
+            </div>
           </div>
-          <p className="text-body max-w-2xl">
-            When real content is added, this block can explain the brief, the capture style, the result, and the visual treatment without turning into a heavy text section.
-          </p>
         </div>
       </section>
 
-      <CtaBlock />
+      <CtaBlock title="Have a location or event to film?" text="Send the basics and Dron V5 will suggest the best aerial approach for the project." secondaryLabel={undefined} />
     </>
   )
 }

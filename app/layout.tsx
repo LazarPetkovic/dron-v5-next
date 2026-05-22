@@ -5,8 +5,8 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 
 export const metadata: Metadata = {
-  title: 'Dron V5 — Cinematic Portfolio',
-  description: 'Cinematic portfolio placeholder site built in Next.js from the V5 design specification.',
+  title: 'Dron V5 | Cinematic Drone Videos in Belgrade',
+  description: 'Cinematic drone video and aerial photography in Belgrade for properties, land, weddings, events, construction progress and brand location stories.',
   icons: {
     icon: [{ url: '/icon.png?v=2', type: 'image/png' }],
     shortcut: ['/icon.png?v=2'],
